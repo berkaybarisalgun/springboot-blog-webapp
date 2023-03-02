@@ -15,6 +15,9 @@
 
 ## Critical informations about project!!!
 I've encountered some problems since I started the project. I have added the "Encountered Common Issues" file to the project's folder for the problems you may encounter while implementing the project. Please feel free to look there if you encounter any problems!
+[Common Issues](https://raw.githubusercontent.com/berkaybarisalgun/springboot-blog-webapp/main/Encountered-Common-Issues.md)
+
+
 
 
 
