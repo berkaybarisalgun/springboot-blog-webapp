@@ -23,16 +23,13 @@ I've encountered some problems since I started the project. I have added the "En
 
 ## Change Log
 ### [Unreleased]
+
 ### [0.0.1] - 2023-03-01
 ### Added
 - Created Spring Boot project using Spring Initializr
 - Added necessary dependencies for Spring Boot and Thymeleaf
 - Created the package structure for the project
 
-### Changed
-N/A
-### Removed
-N/A
 
 ### [1.0.1] - 2023-03-02
 ### Added
@@ -41,5 +38,10 @@ N/A
 - Mappers for PostDto to Post and vice versa
 ### Changed
 - Spring boot version 3.0.3 to 3.0.2 (please check Encountered Common Issues for more information)
-### Removed
-N/A
+
+
+### [1.0.2] - 2023-03-03
+### Added
+- List function in order to list posts
+- Headers,navbars and footers as a fragment.
+
