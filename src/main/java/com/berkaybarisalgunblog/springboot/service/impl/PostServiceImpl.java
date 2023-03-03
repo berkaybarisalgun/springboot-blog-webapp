@@ -1,0 +1,29 @@
+package com.berkaybarisalgunblog.springboot.service.impl;
+
+import com.berkaybarisalgunblog.springboot.dto.PostDto;
+import com.berkaybarisalgunblog.springboot.entity.Post;
+import com.berkaybarisalgunblog.springboot.mapper.PostMapper;
+import com.berkaybarisalgunblog.springboot.repository.PostRepository;
+import com.berkaybarisalgunblog.springboot.service.PostService;
+import org.springframework.stereotype.Service;
+import java.util.*;
+import java.util.stream.Collectors;
+
+@Service
+public class PostServiceImpl implements PostService {
+
+    private PostRepository postRepository;
+    private PostMapper postMapper;
+
+    public PostServiceImpl(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
+
+    @Override
+    public List<PostDto> findAllPosts() {
+
+        List<Post> posts=postRepository.findAll();
+        return posts.stream().map(PostMapper::mapToPostDto).collect(Collectors.toList());
+
+    }
+}
