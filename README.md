@@ -45,3 +45,10 @@ I've encountered some problems since I started the project. I have added the "En
 - List function in order to list posts
 - Headers,navbars and footers as a fragment.
 
+### [1.0.3] - 2023-03-04
+### Added
+- Implemented create post feature
+- Added validations
+- Added CKEditor to content section so it's more like blog page :)
+
+
