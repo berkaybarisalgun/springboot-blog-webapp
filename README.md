@@ -51,4 +51,11 @@ I've encountered some problems since I started the project. I have added the "En
 - Added validations
 - Added CKEditor to content section so it's more like blog page :)
 
+### [1.0.4] - 2023-03-07
+### Added
+- Added Edit and Delete features to blog list.
+- Established necessary connections to database in order to apply edit and delete functions.
+
+
+
 
