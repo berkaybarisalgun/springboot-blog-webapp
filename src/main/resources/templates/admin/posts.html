@@ -13,7 +13,7 @@
     </div>
     <table class="table table-striped table-hover table-bordered">
         <thead class="table-dark">
-        <th style="width:10%">#</th>
+        <th style="width:10%">Order</th>
         <th style="width:20%" >Post Title</th>
         <th style="width:30%" >Post Short Description</th>
         <th style="width:20%">Post Created On</th>
@@ -25,7 +25,10 @@
             <td th:text="${post.title}">post title</td>
             <td th:text="${post.shortDescription}">post short description</td>
             <td th:text="${post.createdOn}">post created date</td>
-            <td></td>
+            <td>
+                <a th:href="@{/admin/posts/{postId}/edit(postId=${post.id})}" class="btn btn-primary">Edit</a>
+                <a th:href="@{/admin/posts/{postId}/delete(postId=${post.id})}" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>
