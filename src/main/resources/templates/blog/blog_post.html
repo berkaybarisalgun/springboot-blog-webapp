@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<div th:replace="blog/header :: header"></div>
+<body>
+<div th:replace="blog/header :: navbar"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <h2 th:text="${post.title}"></h2>
+      <hr/>
+      <h4 th:text="${post.shortDescription}"></h4>
+      <hr />
+      <div th:utext="${post.content}">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <!-- search bar goes here            <-->
+      <div th:replace="blog/search :: search"></div>
+    </div>
+  </div>
+</div>
+<div th:replace="blog/footer :: footer"></div>
+</body>
+</html>
