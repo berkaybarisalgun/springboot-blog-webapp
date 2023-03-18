@@ -1,5 +1,6 @@
 package com.berkaybarisalgunblog.springboot.controller;
 
+import com.berkaybarisalgunblog.springboot.dto.CommentDto;
 import com.berkaybarisalgunblog.springboot.dto.PostDto;
 import com.berkaybarisalgunblog.springboot.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,9 @@ public class BlogController {
     private String showPost(@PathVariable("postUrl") String postUrl,
                             Model model){
         PostDto post = postService.findPostByUrl(postUrl);
+        CommentDto commentDto=new CommentDto();
         model.addAttribute("post", post);
+        model.addAttribute("comment",commentDto);
         return "blog/blog_post";
     }
 

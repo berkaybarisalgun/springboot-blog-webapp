@@ -6,6 +6,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -31,4 +33,7 @@ public class Post {
     private LocalDateTime createdOn;//blog Post creation date
     @UpdateTimestamp//and this is changing the "time base"
     private LocalDateTime updatedOn;//blog Post update date
+
+    @OneToMany(mappedBy = "post",cascade = CascadeType.REMOVE)
+    private Set<Comment> comments=new HashSet<>();
 }
