@@ -3,6 +3,8 @@ package com.berkaybarisalgunblog.springboot.mapper;
 import com.berkaybarisalgunblog.springboot.dto.PostDto;
 import com.berkaybarisalgunblog.springboot.entity.Post;
 
+import java.util.stream.Collectors;
+
 public class PostMapper {
     //map Post entitiy to PostDto
     public static PostDto mapToPostDto(Post post){
@@ -14,6 +16,7 @@ public class PostMapper {
                 .shortDescription(post.getShortDescription())
                 .createdOn(post.getCreatedOn())
                 .updatedOn(post.getUpdatedOn())
+                .comments(post.getComments().stream().map((comment)->CommentMapper.mapToCommentDto(comment)).collect(Collectors.toSet()))
                 .build();
 
     }
