@@ -9,10 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class BlogController {
 
     private PostService postService;
@@ -23,10 +24,10 @@ public class BlogController {
 
     // handler method to handle http://localhost:8080/
     @GetMapping("/")
-    public String viewBlogPosts(Model model){
+    public List<PostDto> viewBlogPosts(Model model){
         List<PostDto> postsResponse = postService.findAllPosts();
         model.addAttribute("postsResponse", postsResponse);
-        return "blog/view_posts";
+        return postsResponse;
     }
 
     // handler method to handle view post request
