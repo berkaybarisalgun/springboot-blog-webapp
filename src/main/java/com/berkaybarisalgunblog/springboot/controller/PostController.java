@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class PostController {
     private PostService postService;
 
@@ -21,10 +21,10 @@ public class PostController {
 
     //creating handler method,GET request and return model and view
     @GetMapping("/admin/posts")
-    public List<PostDto> posts(Model model){
+    public String posts(Model model){
         List<PostDto> posts=postService.findAllPosts();
         model.addAttribute("posts",posts);
-        return posts;
+        return "/admin/posts";
     }
 
 
